@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{{ url_for('static', filename='Style.css') }}">
+  <title>Formulario de Notas</title>
+</head>
+<body id="uno">
+<form id="formulario1" method="POST" action="{{ url_for('form1') }}">
+        <h2 for="titulo1">Ingresa tus notas</h2>
+        <h5>(ingresar notas sin coma/punto, por ejemplo: "70","50","40")</h5><br>
+        <h2>Nota 1:</h2>
+        <input class="respuestas1" type="number" name="dato1" id="dato1" required>
+        <h2>Nota 2:</h2>
+        <input class="respuestas1" type="number" name="dato2" id="dato2" required>
+        <h2>Nota 3:</h2>
+        <input class="respuestas1" type="number" name="dato3" id="dato3" required>
+        <h2>Asistencia (sin %):</h2>
+        <input class="respuestas1" type="number" name="asistencia" id="asistencia" required>
+        <button id="botonf1" type="submit">Enviar</button>
+      </form>
+      
+    <a href="{{ url_for('main') }}"><button id="exit">Volver al menu principal</button></a>
+    
+    {% if resultado %}
+    <p  id="respondido1">{{ resultado }}</p>
+    {% endif %}
+</body>
+</html>
